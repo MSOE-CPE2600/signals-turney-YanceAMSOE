@@ -9,10 +9,22 @@
  * Brief summary of modifications:
  */
 
-
-#include <stdio.h>
+ #include <signal.h>
+ #include <unistd.h>
+ #include <stdlib.h>
+ #include <stdio.h>
 
 int main (int argc, char* argv[]) {
+
+    void handle_segfault() {
+        printf("A segmentation fault was received\n");
+        // Return without performing any other action
+        // Execution will continue from where it left off
+    }
+
+    // Register SIGSEGV signal handler
+    signal(SIGSEGV, handle_segfault);
+
     // Declare a null pointer
     int* i = NULL;
 

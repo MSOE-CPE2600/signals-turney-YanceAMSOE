@@ -4,10 +4,10 @@
  */
 
 /**
- * Modified by:
+ * Modified by: Aden Yance
  * 
- * Brief summary of modifications:
- */
+ * Brief summary of modifications: I removed the exit() call from the signal handler
+*/
 
 
 #include <signal.h>
@@ -20,7 +20,7 @@
  */
 void handle_signal() {
     printf("Received a signal\n");
-    exit(1);
+   
 }
 
 int main() {
@@ -36,3 +36,23 @@ int main() {
 
     return 0;
 }
+
+
+/*
+Signals you can send
+SIGINT - Interrupt program (Ctrl+C)
+SIGTERM - Terminate program (kill -15)
+SIGKILL - Kill program (kill -9)
+SIGUSR1 - User-defined signal 1 (kill -10)
+SIGUSR2 - User-defined signal 2 (kill -12)
+Ctrl+\ - Quit program
+Ctrl+Z - Suspend program
+Ctrl+C - Interrupt program
+Ctrl+D - End of file
+Ctrl+L - Clear screen
+Ctrl+R - Redo
+Ctrl+S - Suspend
+Ctrl+Q - Resume
+Ctrl+U - Undo
+Ctrl+W - Delete word
+*/
